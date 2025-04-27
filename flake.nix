@@ -40,6 +40,7 @@
           packages = with pkgs; [
             rustToolchain
             openssl
+            cargo-expand
             clippy
             pkg-config
             cargo-deny
@@ -49,6 +50,9 @@
             cargo-llvm-cov
             rust-analyzer
           ];
+          shellHook = ''
+            alias nixvim="nix run github:samhutchins-hue/nixvimtemp"
+          '';
 
           env = {
             # Required by rust-analyzer
